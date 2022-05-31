@@ -1,25 +1,38 @@
 package com.try01.controller;
 
-import com.try01.domain.User;
-import com.try01.repository.UserRepository;
+import com.try01.dto.SignupRequestDto;
 import com.try01.service.UserService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.List;
-
-@RequiredArgsConstructor
-@RestController
 @Controller
 public class UserController {
 
-    private final UserRepository userRepository;
     private final UserService userService;
 
-    @GetMapping("/comments") // 댓글 목록 조회 API
-    public List<User> getComments()
-    {
-        return userRepository.findAllByOrderByModifiedAtDesc();
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    // 회원 로그인 페이지
+    @GetMapping("/user/login")
+    public String login() {
+        return "login";
+    }
+
+    // 회원 가입 페이지
+    @GetMapping("/user/signup")
+    public String signup() {
+        return "signup";
+    }
+
+    // 회원 가입 요청 처리
+    @PostMapping("/user/signup")
+    public String registerUser(SignupRequestDto requestDto) {
+        userService.registerUser(requestDto);
+        return "redirect:/user/login";
     }
 }
