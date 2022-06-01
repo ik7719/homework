@@ -31,6 +31,9 @@ public class User {
     private String checkPassword;
 
     @Column(nullable = false)
+    private String comment;
+
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     // db에 저장할 때 String으로 변환해서 저장
     private UserRoleEnum role; // 값을 한정 짓기 위해서

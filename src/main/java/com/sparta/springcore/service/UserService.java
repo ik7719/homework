@@ -1,5 +1,6 @@
 package com.sparta.springcore.service;
 
+import com.sparta.springcore.controller.CommentDto;
 import com.sparta.springcore.dto.SignupRequestDto;
 import com.sparta.springcore.model.User;
 import com.sparta.springcore.model.UserRoleEnum;
@@ -53,6 +54,14 @@ public class UserService {
 
         User user = new User(username, password, role, checkPassword);
         userRepository.save(user);
+    }
+
+    @Autowired
+    public void createComment(CommentDto commentDto)
+    {
+        String comments = commentDto.getComment();
+        User comment = new User(comments);
+        userRepository.save(comment);
     }
 }
 

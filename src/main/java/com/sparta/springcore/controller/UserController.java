@@ -54,4 +54,11 @@ public class UserController {
 
         return new UserInfoDto(username, isAdmin);
     }
+
+    @PostMapping("/comments")
+    public String createComment(CommentDto commentDto)
+    {
+        userService.createComment(commentDto);
+        return "index";
+    }
 }

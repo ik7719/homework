@@ -1,16 +1,12 @@
 package com.sparta.springcore.dto;
 
-
-
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.UniqueElements;
 
-import javax.validation.Constraint;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-
 
 @Setter
 @Getter
