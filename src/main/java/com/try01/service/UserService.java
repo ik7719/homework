@@ -31,7 +31,14 @@ public class UserService {
             throw new IllegalArgumentException("중복된 닉네임입니다.");
         }
 
-        String password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
+        String password = requestDto.getPassword();
+        if(! password.contains(username))
+        {
+            password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
+        } else {
+            throw new IllegalArgumentException("비밀번호에 닉네임이 포함되면 안됩니다.");
+        }
+
         String email = requestDto.getEmail();
 
         // 사용자 ROLE 확인
