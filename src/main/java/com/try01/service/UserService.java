@@ -36,12 +36,11 @@ public class UserService {
         }
 
             String password = requestDto.getPassword();
-            if (password.matches("^{4,}$") )
+            if (! password.matches("^[.]{4,}$") )
             {
-                password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
-            } else {
-
                 throw new IllegalArgumentException("비밀번호는 최소 4자 이상이며, 닉네임이 포함될 수 없습니다.");
+            } else {
+                password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
             }
 
             String email = requestDto.getEmail();
