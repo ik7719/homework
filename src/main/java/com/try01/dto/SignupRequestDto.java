@@ -24,10 +24,7 @@ public class SignupRequestDto {
     @Length(min = 4, message = "비밀번호는 최소 4글자 이상으로 생성해주세요.")
     private String password;
 
-
     private String checkPassword;
-
-    private String email;
 
     private boolean admin = false;
 

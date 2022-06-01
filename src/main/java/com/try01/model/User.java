@@ -30,18 +30,14 @@ public class User {
     @Column(nullable = false)
     private String checkPassword;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
     @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     // db에 저장할 때 String으로 변환해서 저장
     private UserRoleEnum role; // 값을 한정 짓기 위해서
 
-    public User(String username, String password, String email, UserRoleEnum role, String checkPassword) {
+    public User(String username, String password, UserRoleEnum role, String checkPassword) {
         this.username = username;
         this.password = password;
-        this.email = email;
         this.role = role;
         this.checkPassword = checkPassword;
     }

@@ -42,8 +42,6 @@ public class UserService {
             checkPassword = passwordEncoder.encode(requestDto.getPassword());// 패스워드 암호화
         }
 
-        String email = requestDto.getEmail();
-
         // 사용자 ROLE 확인
         UserRoleEnum role = UserRoleEnum.USER;
         if (requestDto.isAdmin()) {
@@ -53,7 +51,7 @@ public class UserService {
             role = UserRoleEnum.ADMIN;
         }
 
-        User user = new User(username, password, email, role, checkPassword);
+        User user = new User(username, password, role, checkPassword);
         userRepository.save(user);
     }
 }
