@@ -26,7 +26,7 @@ public class UserService {
         // 회원 ID 중복 확인
 
         String username = requestDto.getUsername();
-        if (!username.matches("^[a-zA-Z0-9]{3,}$"))
+        if (! username.matches("^[a-zA-Z0-9]{3,}$"))
         {
             throw new IllegalArgumentException("'" + username+ "'" + "는 올바른 닉네임 형식이 아닙니다.");
         } else {
@@ -35,11 +35,15 @@ public class UserService {
                 throw new IllegalArgumentException("중복된 닉네임입니다.");
         }
 
+            String password = requestDto.getPassword();
+            if (password.matches("^{4,}$") )
+            {
+                password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
+            } else {
 
+                throw new IllegalArgumentException("비밀번호는 최소 4자 이상이며, 닉네임이 포함될 수 없습니다.");
+            }
 
-
-            // 패스워드 암호화
-            String password = passwordEncoder.encode(requestDto.getPassword());
             String email = requestDto.getEmail();
 
             // 사용자 ROLE 확인
