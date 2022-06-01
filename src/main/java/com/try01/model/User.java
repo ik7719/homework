@@ -1,5 +1,6 @@
 package com.try01.model;
 
+import com.try01.dto.SignupRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

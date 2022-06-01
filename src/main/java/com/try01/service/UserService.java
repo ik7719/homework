@@ -36,7 +36,7 @@ public class UserService {
         if(password.contains(username) || !checkPassword.equals(requestDto.getCheckPassword()))
         {
             throw new IllegalArgumentException
-                    ("비밀번호에 닉네임이 포함되면 안됩니다." + "\n" + "비밀번호가 일치하지 않습니다.");
+                    ("\n" + "비밀번호에 닉네임이 포함되면 안됩니다." + "\n" + "비밀번호가 일치하지 않습니다.");
         } else {
             password = passwordEncoder.encode(requestDto.getPassword());
             checkPassword = passwordEncoder.encode(requestDto.getPassword());// 패스워드 암호화
