@@ -1,4 +1,4 @@
-package com.sparta.springcore.model;
+package com.sparta.springcore.domain;
 
 public enum UserRoleEnum {
     USER(Authority.USER),  // 사용자 권한

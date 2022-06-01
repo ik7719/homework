@@ -1,6 +1,6 @@
 package com.sparta.springcore.security;
 
-import com.sparta.springcore.model.User;
+import com.sparta.springcore.domain.User;
 import com.sparta.springcore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

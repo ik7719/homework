@@ -1,6 +1,6 @@
 package com.sparta.springcore.repository;
 
-import com.sparta.springcore.model.User;
+import com.sparta.springcore.domain.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

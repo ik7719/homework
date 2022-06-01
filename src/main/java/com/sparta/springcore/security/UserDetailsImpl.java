@@ -1,14 +1,13 @@
 package com.sparta.springcore.security;
 
-import com.sparta.springcore.model.User;
-import com.sparta.springcore.model.UserRoleEnum;
+import com.sparta.springcore.domain.User;
+import com.sparta.springcore.domain.UserRoleEnum;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 
 public class UserDetailsImpl implements UserDetails {
 

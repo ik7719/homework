@@ -1,6 +1,6 @@
 package com.sparta.springcore.security.provider;
 
-import com.sparta.springcore.model.User;
+import com.sparta.springcore.domain.User;
 import com.sparta.springcore.repository.UserRepository;
 import com.sparta.springcore.security.UserDetailsImpl;
 import com.sparta.springcore.security.jwt.JwtDecoder;

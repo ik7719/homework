@@ -1,8 +1,9 @@
 package com.sparta.springcore.controller;
 
+import com.sparta.springcore.dto.CommentDto;
 import com.sparta.springcore.dto.SignupRequestDto;
 import com.sparta.springcore.dto.UserInfoDto;
-import com.sparta.springcore.model.UserRoleEnum;
+import com.sparta.springcore.domain.UserRoleEnum;
 import com.sparta.springcore.security.UserDetailsImpl;
 
 import com.sparta.springcore.service.UserService;

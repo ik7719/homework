@@ -1,4 +1,4 @@
-package com.sparta.springcore.model;
+package com.sparta.springcore.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,5 +43,10 @@ public class User {
         this.password = password;
         this.role = role;
         this.checkPassword = checkPassword;
+    }
+
+    public void Comment(String comment)
+    {
+        this.comment = comment;
     }
 }
