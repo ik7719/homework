@@ -26,7 +26,7 @@ public class UserService {
         // 회원 ID 중복 확인
 
         String username = requestDto.getUsername();
-        if (!username.matches("^[a-zA-Z]{1}[a-zA-Z0-9_]{2}$"))
+        if (!username.matches("^[a-zA-Z0-9]{3,}$"))
         {
             throw new IllegalArgumentException("'" + username+ "'" + "는 올바른 닉네임 형식이 아닙니다.");
         } else {
@@ -34,6 +34,8 @@ public class UserService {
             if (foundUsername.isPresent()) {
                 throw new IllegalArgumentException("중복된 닉네임입니다.");
         }
+
+
 
 
             // 패스워드 암호화
