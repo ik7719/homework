@@ -32,11 +32,14 @@ public class UserService {
         }
 
         String password = requestDto.getPassword();
-        if(! password.contains(username))
+        String checkPassword = requestDto.getCheckPassword();
+        if(password.contains(username) || !checkPassword.equals(requestDto.getCheckPassword()))
         {
-            password = passwordEncoder.encode(requestDto.getPassword()); // 패스워드 암호화
+            throw new IllegalArgumentException
+                    ("비밀번호에 닉네임이 포함되면 안됩니다." + "\n" + "비밀번호가 일치하지 않습니다.");
         } else {
-            throw new IllegalArgumentException("비밀번호에 닉네임이 포함되면 안됩니다.");
+            password = passwordEncoder.encode(requestDto.getPassword());
+            checkPassword = passwordEncoder.encode(requestDto.getPassword());// 패스워드 암호화
         }
 
         String email = requestDto.getEmail();
@@ -50,7 +53,7 @@ public class UserService {
             role = UserRoleEnum.ADMIN;
         }
 
-        User user = new User(username, password, email, role);
+        User user = new User(username, password, email, role, checkPassword);
         userRepository.save(user);
     }
 }
