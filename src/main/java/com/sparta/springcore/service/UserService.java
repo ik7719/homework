@@ -1,9 +1,9 @@
-package com.try01.service;
+package com.sparta.springcore.service;
 
-import com.try01.dto.SignupRequestDto;
-import com.try01.model.User;
-import com.try01.model.UserRoleEnum;
-import com.try01.repository.UserRepository;
+import com.sparta.springcore.dto.SignupRequestDto;
+import com.sparta.springcore.model.User;
+import com.sparta.springcore.model.UserRoleEnum;
+import com.sparta.springcore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

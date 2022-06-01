@@ -1,6 +1,5 @@
-package com.try01.model;
+package com.sparta.springcore.model;
 
-import com.try01.dto.SignupRequestDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 

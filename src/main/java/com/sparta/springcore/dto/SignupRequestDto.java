@@ -1,4 +1,4 @@
-package com.try01.dto;
+package com.sparta.springcore.dto;
 
 
 
