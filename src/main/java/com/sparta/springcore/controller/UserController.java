@@ -7,10 +7,12 @@ import com.sparta.springcore.security.UserDetailsImpl;
 
 import com.sparta.springcore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
@@ -40,9 +42,9 @@ public class UserController {
     // 회원 가입 요청 처리
 
     @PostMapping("/user/signup")
-    public String registerUser(@Valid SignupRequestDto requestDto) {
-        userService.registerUser(requestDto);
-        return "redirect:/user/loginView";
+    public ResponseEntity<SignupRequestDto> registerUser(@Valid @RequestBody SignupRequestDto requestDto) {
+        SignupRequestDto user = userService.registerUser(requestDto);
+        return ResponseEntity.ok(user);
     }
 
     // 회원 관련 정보 받기
