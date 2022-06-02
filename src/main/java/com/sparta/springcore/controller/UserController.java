@@ -1,6 +1,5 @@
 package com.sparta.springcore.controller;
 
-import com.sparta.springcore.dto.CommentDto;
 import com.sparta.springcore.dto.SignupRequestDto;
 import com.sparta.springcore.dto.UserInfoDto;
 import com.sparta.springcore.domain.UserRoleEnum;
@@ -39,6 +38,7 @@ public class UserController {
     }
 
     // 회원 가입 요청 처리
+
     @PostMapping("/user/signup")
     public String registerUser(@Valid SignupRequestDto requestDto) {
         userService.registerUser(requestDto);
@@ -54,12 +54,5 @@ public class UserController {
         boolean isAdmin = (role == UserRoleEnum.ADMIN);
 
         return new UserInfoDto(username, isAdmin);
-    }
-
-    @PostMapping("/comments")
-    public String createComment(CommentDto commentDto)
-    {
-        userService.createComment(commentDto);
-        return "index";
     }
 }

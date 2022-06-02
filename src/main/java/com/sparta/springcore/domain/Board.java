@@ -28,7 +28,7 @@ public class Board extends Timestamped
 
     private String contents;
 
-    private List<Comment> comments = new ArrayList<>();
+//    private List<Comment> comments = new ArrayList<>(); // 아직 코멘트 도메인 생성 안함.
 
     public Board(String title, String password, String contents)
     {
