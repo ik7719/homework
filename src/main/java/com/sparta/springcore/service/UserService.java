@@ -7,6 +7,7 @@ import com.sparta.springcore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
+    @ResponseBody
     public SignupRequestDto registerUser(SignupRequestDto requestDto) {
         // 회원 ID 중복 확인
 
@@ -55,5 +57,7 @@ public class UserService {
         userRepository.save(user);
         return requestDto;
     }
+
+
 }
 
