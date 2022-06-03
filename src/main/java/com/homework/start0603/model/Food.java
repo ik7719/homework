@@ -1,13 +1,20 @@
 package com.homework.start0603.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
+@Getter @Setter
+@NoArgsConstructor
 public class Food
 {
+    @ManyToOne
+    @JoinColumn(name = "parent_id")
+    private RestaurantIntegration parent;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long foodId;

@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,4 +31,15 @@ public class RestaurantIntegration
         this.minOrderPrice = minOrderPrice;
         this.deliveryFee = deliveryFee;
     }
+
+    @OneToMany(mappedBy = "parent")
+    private final List<Food> foodList = new ArrayList<>();
+
+    public void addChild(Food food)
+    {
+        foodList.add(food);
+        food.setParent(this);
+    }
+
+
 }
