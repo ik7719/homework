@@ -1,8 +1,11 @@
 package com.homework.start0603.model;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
 public class RestaurantIntegration
 {
     @Id
@@ -17,4 +20,11 @@ public class RestaurantIntegration
 
     @Column(nullable = false)
     private int deliveryFee; // 기본 배달비
+
+    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee)
+    {
+        this.name = name;
+        this.minOrderPrice = minOrderPrice;
+        this.deliveryFee = deliveryFee;
+    }
 }
