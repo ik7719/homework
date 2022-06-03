@@ -1,6 +1,6 @@
 package com.homework.start0603.service;
 
-import com.homework.start0603.Dto.RestaurantIntegrationDto;
+import com.homework.start0603.dto.RestaurantIntegrationDto;
 import com.homework.start0603.model.RestaurantIntegration;
 import com.homework.start0603.repository.RestaurantIntegrationRepository;
 

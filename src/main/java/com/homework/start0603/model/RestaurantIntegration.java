@@ -1,11 +1,13 @@
 package com.homework.start0603.model;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
+@NoArgsConstructor
 public class RestaurantIntegration
 {
     @Id
