@@ -1,4 +1,10 @@
 package com.homework.start0603.repository;
 
-public interface RestaurantIntegrationRepository {
+import com.homework.start0603.model.RestaurantIntegration;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface RestaurantIntegrationRepository extends
+        JpaRepository<RestaurantIntegration, Long>
+{
+
 }
