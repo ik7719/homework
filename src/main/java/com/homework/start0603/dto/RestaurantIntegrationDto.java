@@ -15,10 +15,13 @@ public class RestaurantIntegrationDto
     @Range(min = 0, max = 10000)
     private int deliveryFee;
 
-    public RestaurantIntegrationDto(String name, int minOrderPrice, int deliveryFee)
+    private Long id;
+
+    public RestaurantIntegrationDto(String name, int minOrderPrice, int deliveryFee, Long id)
     {
         this.name = name;
         this.minOrderPrice = minOrderPrice;
         this.deliveryFee = deliveryFee;
+        this.id = id;
     }
 }
