@@ -2,17 +2,20 @@ package com.homework.start0603.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 
 @Getter @Setter
 public class RestaurantIntegrationDto
 {
     private String name;
 
-    @Length(min = 1000, max = 100000, message = "1000원에서 100000원 입력이 가능합니다.")
+    @Min(value = 1000)
+    @Max(value = 100000)
     private int minOrderPrice;
 
-    @Length(max = 10000, message = "최대 10000원입니다.")
+    @Max(value = 10000)
     private int deliveryFee;
 
     public RestaurantIntegrationDto(String name, int minOrderPrice, int deliveryFee)
