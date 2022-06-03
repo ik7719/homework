@@ -1,10 +1,8 @@
 package com.homework.start0603.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class RestaurantIntegration
 {
     @Id
