@@ -15,6 +15,7 @@ public class RestaurantIntegrationDto
     @Max(value = 100000)
     private int minOrderPrice;
 
+    @Min(value = 0)
     @Max(value = 10000)
     private int deliveryFee;
 
