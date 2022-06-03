@@ -25,6 +25,7 @@ public class RestaurantIntegrationController
     {
         restaurantIntegrationService.registerRe(restaurantIntegrationDto);
         return "";
+//        todo : 서비스에서 조건 주지말고 컨트롤러에서 조건 주는 방향으로
     }
 
     @GetMapping("/restaurants")
