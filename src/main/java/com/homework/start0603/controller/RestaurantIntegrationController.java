@@ -24,7 +24,7 @@ public class RestaurantIntegrationController
     public String createRestaurant(@Valid @RequestBody RestaurantIntegrationDto restaurantIntegrationDto)
     {
         restaurantIntegrationService.registerRe(restaurantIntegrationDto);
-        return "등록이 완료 되었습니다.";
+        return "";
     }
 
     @GetMapping("/restaurants")

@@ -4,9 +4,11 @@ import com.homework.start0603.dto.RestaurantIntegrationDto;
 import com.homework.start0603.model.RestaurantIntegration;
 import com.homework.start0603.repository.RestaurantIntegrationRepository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class RestaurantIntegrationService
 {
@@ -26,6 +28,14 @@ public class RestaurantIntegrationService
 
         RestaurantIntegration restaurantIntegration = new RestaurantIntegration(name, minOrderFee, deliveryFee);
 
-        restaurantIntegrationRepository.save(restaurantIntegration);
+        int minOrderFeeUnit = 100;
+        int deliveryFeeUnit = 500;
+
+        if(minOrderFee % minOrderFeeUnit == 0 && deliveryFee % deliveryFeeUnit == 0)
+        {
+            restaurantIntegrationRepository.save(restaurantIntegration);
+        } else {
+            log.info("값을 재설정 해주십시오.");
+        }
     }
 }
