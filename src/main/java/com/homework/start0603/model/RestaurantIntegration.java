@@ -32,14 +32,14 @@ public class RestaurantIntegration
         this.deliveryFee = deliveryFee;
     }
 
-    @OneToMany(mappedBy = "parent")
-    private final List<Food> foodList = new ArrayList<>();
-
-    public void addChild(Food food)
-    {
-        foodList.add(food);
-        food.setParent(this);
-    }
+//    @OneToMany(mappedBy = "parent")
+//    private final List<Food> foodList = new ArrayList<>();
+//
+//    public void addChild(Food food)
+//    {
+//        foodList.add(food);
+//        food.setParent(this);
+//    }
 
 
 }
