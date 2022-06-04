@@ -20,20 +20,21 @@ public class RestaurantIntegrationService
         this.restaurantIntegrationRepository = restaurantIntegrationRepository;
     }
 
-    public void registerRe(RestaurantIntegrationDto restaurantIntegrationDto)
+    public RestaurantIntegrationDto registerRe(RestaurantIntegrationDto restaurantIntegrationDto)
     {
         String name = restaurantIntegrationDto.getName();
         int minOrderFee = restaurantIntegrationDto.getMinOrderPrice();
         int deliveryFee = restaurantIntegrationDto.getDeliveryFee();
+        Long id = restaurantIntegrationDto.getId();
 
-        RestaurantIntegration restaurantIntegration = new RestaurantIntegration(name, minOrderFee, deliveryFee);
+        RestaurantIntegration restaurantIntegration = new RestaurantIntegration(name, minOrderFee, deliveryFee, id);
 
         int minOrderFeeUnit = 100;
         int deliveryFeeUnit = 500;
 
         if(minOrderFee % minOrderFeeUnit == 0 && deliveryFee % deliveryFeeUnit == 0)
         {
-            restaurantIntegrationRepository.save(restaurantIntegration);
+            return RestaurantIntegrationDto.from(restaurantIntegrationRepository.save(restaurantIntegration));
         } else {
             throw new IllegalArgumentException("값을 다시 입력해주세요.");
         }

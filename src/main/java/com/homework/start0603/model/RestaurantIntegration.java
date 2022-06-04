@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +26,12 @@ public class RestaurantIntegration
     @Column(nullable = false)
     private int deliveryFee; // 기본 배달비
 
-    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee)
+    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee, Long id)
     {
         this.name = name;
         this.minOrderPrice = minOrderPrice;
         this.deliveryFee = deliveryFee;
+        this.id = id;
     }
 
 //    @OneToMany(mappedBy = "parent")
