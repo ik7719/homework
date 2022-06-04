@@ -35,7 +35,7 @@ public class RestaurantIntegrationService
         {
             restaurantIntegrationRepository.save(restaurantIntegration);
         } else {
-            log.info("값을 재설정 해주십시오.");
+            throw new IllegalArgumentException("값을 다시 입력해주세요.");
         }
     }
 }
