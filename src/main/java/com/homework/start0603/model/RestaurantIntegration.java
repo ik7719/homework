@@ -1,12 +1,9 @@
 package com.homework.start0603.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -26,21 +23,9 @@ public class RestaurantIntegration
     @Column(nullable = false)
     private int deliveryFee; // 기본 배달비
 
-    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee)
-    {
+    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee) {
         this.name = name;
         this.minOrderPrice = minOrderPrice;
         this.deliveryFee = deliveryFee;
     }
-
-//    @OneToMany(mappedBy = "parent")
-//    private final List<Food> foodList = new ArrayList<>();
-//
-//    public void addChild(Food food)
-//    {
-//        foodList.add(food);
-//        food.setParent(this);
-//    }
-
-
 }
