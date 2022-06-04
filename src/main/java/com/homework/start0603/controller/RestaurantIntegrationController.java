@@ -5,12 +5,14 @@ import com.homework.start0603.model.RestaurantIntegration;
 import com.homework.start0603.repository.RestaurantIntegrationRepository;
 import com.homework.start0603.service.RestaurantIntegrationService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class RestaurantIntegrationController
@@ -20,10 +22,9 @@ public class RestaurantIntegrationController
 
 
     @PostMapping("/restaurant/register")
-    public ResponseEntity<RestaurantIntegrationDto> createRestaurant(@Valid @RequestBody RestaurantIntegrationDto restaurantIntegrationDto)
+    public RestaurantIntegrationDto createRestaurant(@Valid @RequestBody RestaurantIntegrationDto restaurantIntegrationDto)
     {
-        RestaurantIntegrationDto integrationDto = restaurantIntegrationService.registerRe(restaurantIntegrationDto);
-        return ResponseEntity.ok(integrationDto);
+        return restaurantIntegrationService.registerRe(restaurantIntegrationDto);
 
         // todo : 서비스에서 조건 주지말고 컨트롤러에서 조건 주는 방향으로
     }

@@ -1,10 +1,10 @@
 package com.homework.start0603.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class RestaurantIntegration
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
@@ -26,12 +26,11 @@ public class RestaurantIntegration
     @Column(nullable = false)
     private int deliveryFee; // 기본 배달비
 
-    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee, Long id)
+    public RestaurantIntegration(String name, int minOrderPrice, int deliveryFee)
     {
         this.name = name;
         this.minOrderPrice = minOrderPrice;
         this.deliveryFee = deliveryFee;
-        this.id = id;
     }
 
 //    @OneToMany(mappedBy = "parent")
