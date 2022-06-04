@@ -9,6 +9,8 @@ import org.hibernate.validator.constraints.Range;
 @Getter @Setter
 public class RestaurantIntegrationDto
 {
+    private Long id;
+
     private String name;
 
     @Range(min = 1000, max = 100000)
@@ -16,8 +18,6 @@ public class RestaurantIntegrationDto
 
     @Range(min = 0, max = 10000)
     private int deliveryFee;
-
-    private Long id;
 
     public RestaurantIntegrationDto(String name, int minOrderPrice, int deliveryFee)
     {
