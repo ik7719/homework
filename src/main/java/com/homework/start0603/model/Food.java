@@ -11,10 +11,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Food
 {
-    @ManyToOne
-    @JoinColumn(name = "parent_id")
-    private RestaurantIntegration parent;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long foodId;

@@ -12,7 +12,7 @@ public class RestaurantIntegration
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long restaurantId;
 
     @Column(nullable = false, unique = true)
     private String name; // 음식점 이름

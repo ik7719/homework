@@ -1,7 +1,6 @@
 package com.homework.start0603.service;
 
 import com.homework.start0603.dto.FoodDto;
-import com.homework.start0603.dto.RestaurantIntegrationDto;
 import com.homework.start0603.model.Food;
 import com.homework.start0603.repository.FoodRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -18,13 +17,12 @@ public class FoodService
         this.foodRepository = foodRepository;
     }
 
-    public void registerMenu(FoodDto foodDto, RestaurantIntegrationDto restaurantIntegrationDto)
+    public void registerMenu(FoodDto foodDto)
     {
         String foodName = foodDto.getFoodName();
         int foodPrice = foodDto.getFoodPrice();
-        Long id = restaurantIntegrationDto.getId();
 
-        Food food = new Food(foodName, foodPrice, id);
+        Food food = new Food(foodName, foodPrice);
 
         int foodPriceUnit = 100;
 
