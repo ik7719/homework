@@ -13,8 +13,14 @@ import javax.persistence.*;
 public class RestaurantIntegration
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "RESTAURANT_ID")
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "FOOD_ID")
+    private Food food; // Food Reference
 
     @Column(nullable = false, unique = true)
     private String name; // 음식점 이름

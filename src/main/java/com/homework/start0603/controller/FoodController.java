@@ -19,13 +19,11 @@ public class FoodController
 {
     private final FoodService foodService;
 
-    @PostMapping("/restaurant/{restaurantId}/food/register")
-    public String createMenu
-            (@PathVariable Long restaurantId,
-            @Valid @RequestBody FoodDto foodDto)
+    @PostMapping("/restaurant/{id}/food/register")
+    public FoodDto createMenu
+            (@PathVariable Long id, @Valid @RequestBody FoodDto foodDto)
     {
-        log.info("{}", restaurantId); // "{}" : 자동으로 맵핑
-        foodService.registerMenu(foodDto);
-        return "";
+        log.info("{}", id); // "{}" : 자동으로 맵핑
+        return foodService.registerMenu(foodDto);
     }
 }

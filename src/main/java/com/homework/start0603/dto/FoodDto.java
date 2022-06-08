@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.Range;
 @Getter @Setter
 public class FoodDto
 {
+    private Long id;
+
     private String foodName;
 
     @Range(min = 100, max = 1000000)

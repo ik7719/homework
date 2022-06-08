@@ -17,7 +17,7 @@ public class FoodService
         this.foodRepository = foodRepository;
     }
 
-    public void registerMenu(FoodDto foodDto)
+    public FoodDto registerMenu(FoodDto foodDto)
     {
         String foodName = foodDto.getFoodName();
         int foodPrice = foodDto.getFoodPrice();
@@ -28,8 +28,10 @@ public class FoodService
 
         if(foodPrice % foodPriceUnit == 0){
             foodRepository.save(food);
+            foodDto.setId(food.getId());
+            return foodDto;
         } else {
-            log.info("가격을 다시 입력해주세요.");
+            throw new IllegalArgumentException("값을 다시 입력해주세요.");
         }
     }
 }
