@@ -1,5 +1,6 @@
 package com.homework.start0603.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -8,11 +9,12 @@ import javax.persistence.*;
 @Entity
 @Getter
 @NoArgsConstructor
+@AllArgsConstructor
 public class RestaurantIntegration
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long restaurantId;
+    private Long id;
 
     @Column(nullable = false, unique = true)
     private String name; // 음식점 이름

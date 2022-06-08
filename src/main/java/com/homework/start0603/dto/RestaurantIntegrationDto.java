@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.Range;
 @Getter @Setter
 public class RestaurantIntegrationDto
 {
-    private Long restaurantId;
+    private Long id;
 
     private String name;
 

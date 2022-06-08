@@ -37,7 +37,7 @@ public class RestaurantIntegrationService
         if(minOrderFee % minOrderFeeUnit == 0 && deliveryFee % deliveryFeeUnit == 0)
         {
             restaurantIntegrationRepository.save(restaurantIntegration);
-            restaurantIntegrationDto.setRestaurantId(restaurantIntegration.getRestaurantId());
+            restaurantIntegrationDto.setId(restaurantIntegration.getId());
             return restaurantIntegrationDto;
         } else {
             throw new IllegalArgumentException("값을 다시 입력해주세요.");
