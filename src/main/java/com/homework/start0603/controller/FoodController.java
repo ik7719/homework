@@ -23,7 +23,7 @@ public class FoodController
     public FoodDto createMenu
             (@PathVariable Long id, @Valid @RequestBody FoodDto foodDto)
     {
-        log.info("{}", id); // "{}" : 자동으로 맵핑
+//        log.info("{}", id); // "{}" : 자동으로 맵핑
         return foodService.registerMenu(foodDto);
     }
 }
