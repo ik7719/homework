@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,7 +18,7 @@ public class RestaurantIntegration
     @Column(name = "RESTAURANT_ID")
     private Long id;
 
-    @OneToMany(mappedBy = "restaurentIntegration")
+    @OneToMany(mappedBy = "restaurantIntegration")
     private List<Food> foods;
 
     @Column(nullable = false, unique = true)

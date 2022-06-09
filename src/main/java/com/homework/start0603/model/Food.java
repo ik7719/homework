@@ -16,9 +16,12 @@ public class Food
     @Column(name = "FOOD_ID")
     private Long id;
 
+//    @Column(name = "RESTAURANT_ID")
+//    private Long restaurantId; // FK
+
     @ManyToOne
     @JoinColumn(name = "RESTAURANT_ID")
-    private RestaurantIntegration restaurentIntegration; // Food Reference
+    private RestaurantIntegration restaurantIntegration; // Food Reference
 
     @Column(nullable = false)
     private String foodName;
